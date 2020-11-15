@@ -7,8 +7,8 @@ class MyTestCase(unittest.TestCase):
 		self.assertEqual(hello_world(), 'Hello World!')
 
 	def test_ci_build(self):
-		self.assertEqual(ci_test, 'Time to test CI')
-		
+		self.assertEqual(ci_test(), 'Time to test CI')
+
 
 if __name__ == '__main__':
 	unittest.main()
