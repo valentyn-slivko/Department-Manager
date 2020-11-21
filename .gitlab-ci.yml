@@ -1,0 +1,18 @@
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+  - python --version
+  - pip install -U pip
+  - pip install -U pytest
+  - pip install coverage
+  - pip install coveralls
+  - pip install pylint
+  - pip install pylint --upgrade
+  - pip install -r requirements.txt # install package + test dependencies
+  # python -m unittest discover -s tests -p "test_*.py" # run tests
+  - coverage run -m unittest discover -s tests -p "test_*.py" # run coverage
+  - pylint department-manager --exit-zero
+  - COVERALLS_REPO_TOKEN=dbLTzdOjosns0Avlrld8R5FXi0AbvOK4p coveralls # submit and get result
