@@ -1,10 +1,16 @@
+before_script:
+  - apt-get -qq update && apt-get -qq install -y python
+  - apt-get -qq update
+  - source department-manager-env/bin/activate
+  - python --version
+
 stages:
   - test
 
 test:
   stage: test
   script:
-  - apt-get install -y python-dev python-pip
+  - apt-get -yq install software-properties-common
   - python --version
   - pip install -U pip
   - pip install -U pytest
