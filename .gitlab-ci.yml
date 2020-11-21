@@ -4,6 +4,7 @@ stages:
 test:
   stage: test
   script:
+  - apt-get install -y python-dev python-pip
   - python --version
   - pip install -U pip
   - pip install -U pytest
