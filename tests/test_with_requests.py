@@ -1,6 +1,5 @@
 import unittest
 import requests
-from main import dummy
 
 PATH = 'http://localhost:5000/'
 
@@ -14,4 +13,4 @@ class ApiTestCase(unittest.TestCase):
 
 	def test_put_method(self):
 		response = requests.put(PATH + 'api/departments/9', data={'id': 9, 'department': 'Another one'}).json()
-		# assert
+
